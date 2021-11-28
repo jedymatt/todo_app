@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:todo_app/presentation/screens/home_screen.dart';
-import 'package:todo_app/services/auth_service.dart';
 
+import '../../services/auth_service.dart';
 import 'auth_screen.dart';
 
 class RegisterScreen extends StatefulWidget {

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:todo_app/presentation/widgets/log_in_form.dart';
-import 'package:todo_app/presentation/widgets/register_form.dart';
-import 'package:todo_app/services/auth_service.dart';
 
-import '../screens/register_screen.dart';
+import '../widgets/log_in_form.dart';
+import '../widgets/register_form.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);

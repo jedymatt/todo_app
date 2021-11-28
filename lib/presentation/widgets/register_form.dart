@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:todo_app/services/auth_service.dart';
+
+import '../../services/auth_service.dart';
 
 class RegisterForm extends StatefulWidget {
   final VoidCallback onTapLogIn;
@@ -95,13 +96,6 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                 );
               }
-
-              // Navigator.pushReplacement(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => const HomeScreen(),
-              //   ),
-              // );
             },
             child: const Text('Register'),
           ),

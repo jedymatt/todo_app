@@ -3,8 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'presentation/screens/home_screen.dart';
 import 'presentation/screens/auth_screen.dart';
+import 'presentation/screens/home_screen.dart';
 import 'services/auth_service.dart';
 
 void main() async {
