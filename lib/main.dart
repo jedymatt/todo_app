@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'presentation/screens/home_screen.dart';
-import 'presentation/screens/login_screen.dart';
+import 'presentation/screens/auth_screen.dart';
 import 'services/auth_service.dart';
 
 void main() async {
@@ -49,16 +49,10 @@ class _AppState extends State<App> {
 
             // Once complete, show your application
             if (snapshot.connectionState == ConnectionState.done) {
-              final user = Provider.of<User?>(context);
+              // final user = Provider.of<User?>(context);
 
-              return (user != null) ? const HomeScreen() : const LoginScreen();
-              // return const Center(
-              //   child: Scaffold(
-              //     body: Center(
-              //       child: Text('Okay'),
-              //     ),
-              //   ),
-              // );
+              // return (user != null) ? const HomeScreen() : const LoginScreen();
+              return const Root();
             }
 
             // Otherwise, show something whilst waiting for initialization to complete
@@ -70,6 +64,29 @@ class _AppState extends State<App> {
           },
         ),
       ),
+    );
+  }
+}
+
+class Root extends StatefulWidget {
+  const Root({Key? key}) : super(key: key);
+
+  @override
+  _RootState createState() => _RootState();
+}
+
+class _RootState extends State<Root> {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: AuthService().user,
+      builder: (context, AsyncSnapshot<User?> snapshot) {
+        if (snapshot.data?.uid == null) {
+          return const AuthScreen();
+        } else {
+          return const HomeScreen();
+        }
+      },
     );
   }
 }

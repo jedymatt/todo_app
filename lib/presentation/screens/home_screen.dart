@@ -19,12 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: Center(
         child: TextButton(
           child: Text('Logout'),
           onPressed: () async {
             await AuthService().signOut();
+            Navigator.popUntil(context, (route) => true);
           },
         ),
       ),
