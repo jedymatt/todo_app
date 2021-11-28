@@ -10,8 +10,7 @@
             "type": "dart",
             "flutterPlatform": "default",
             "flutterMode": "debug",
-            "showMemoryUsage": true,
-            "program": "lib/main.dart"
+            "showMemoryUsage": true
         },
         {
             "name": "todo_app (profile mode)",
